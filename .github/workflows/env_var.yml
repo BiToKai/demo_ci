@@ -1,0 +1,25 @@
+name: Amnesia
+
+#Event trig
+on: workflow_dispatch
+
+env:
+  Name: Billal
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    env:
+      ENTREPRISE: BillDev
+    steps:
+      - name: "Dit bonjour"
+        run: echo "Bonjour $Name ! Bienvenue chez $ENTREPRISE et bon $DAY à toi !"
+        env:
+          DAY: mardi
+      - name: "Dit le jour"
+        run: echo "Oui, aujourd'hui c'est $DAY !"
+  say_goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Dit au revoir"
+        run: echo "Au revoir $Name ! A bientôt chez $ENTREPRISE !"
